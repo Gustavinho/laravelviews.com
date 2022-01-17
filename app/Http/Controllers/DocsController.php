@@ -2,31 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Documentation;
 use Illuminate\Http\Request;
 
 class DocsController extends Controller
 {
-    private const DEFAULT_PAGE = 'table-view';
-    private Documentation $documentation;
-
-    public function __construct(Documentation $documentation)
+    public function index()
     {
-        $this->documentation = $documentation;
+        return view('docs');
     }
 
-    public function show($page = null)
+    public function show($path)
     {
-        if (!$page) {
-            return redirect()->route('page', self::DEFAULT_PAGE);
-        }
-
-        if (!$this->documentation->exists($page)) {
-            abort(404);
-        }
-
-        $page = $this->documentation->getPage($page);
-
-        return view('docs', compact('page'));
+        return response()->file(base_path('docs/'.$path));
     }
 }

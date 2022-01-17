@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\DocsController;
-use App\Http\Livewire\UsersTableView;
+use App\Http\Controllers\ExamplesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +15,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/{page?}', [DocsController::class, 'show'])->name('page');
+Route::get('/examples/{page?}', [ExamplesController::class, 'show'])->name('page');
+Route::get('/', [DocsController::class, 'index']);
+Route::get('/{path}', [DocsController::class, 'show']);
