@@ -16,5 +16,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/examples/{page?}', [ExamplesController::class, 'show'])->name('page');
-Route::get('/', [DocsController::class, 'index']);
-Route::get('/{path}', [DocsController::class, 'show']);
+Route::get('/{page?}', [DocsController::class, 'show'])->name('doc');

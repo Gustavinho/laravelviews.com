@@ -1,0 +1,30 @@
+- title: Getting started
+  submenu:
+    - title: Installation
+      route: /installation
+    - title: Basic usage
+      route: /basic-usage
+    - title: Customization
+      route: /customization
+
+- title: Views
+  submenu:
+    - title: Table view
+      route: /examples/table-view
+    - title: Grid view
+      route: /examples/grid-view
+    - title: List view
+      route: /examples/list-view
+    - title: Detail view
+      route: /examples/detail-view
+
+- title: Examples
+  submenu:
+    - title: Table view
+      route: /examples/table-view
+    - title: Grid view
+      route: /examples/grid-view
+    - title: List view
+      route: /examples/list-view
+    - title: Detail view
+      route: /examples/detail-view

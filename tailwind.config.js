@@ -1,6 +1,5 @@
 const colors = require('tailwindcss/colors')
 
-
 module.exports = {
   content: [
     './resources/views/**/*.blade.php',
@@ -12,7 +11,7 @@ module.exports = {
     extend: {
       colors: {
         gray: colors.slate,
-        primary: colors.purple,
+        primary: colors.cyan,
       }
     }
   },

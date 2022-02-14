@@ -5,28 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Documentation;
 use Illuminate\Http\Request;
 
-class ExamplesController extends Controller
+class ExamplesController extends PageController
 {
-    private const DEFAULT_PAGE = 'table-view';
-    private Documentation $documentation;
-
-    public function __construct(Documentation $documentation)
-    {
-        $this->documentation = $documentation;
-    }
-
-    public function show($page = null)
-    {
-        if (!$page) {
-            return redirect()->route('page', self::DEFAULT_PAGE);
-        }
-
-        if (!$this->documentation->exists($page)) {
-            abort(404);
-        }
-
-        $page = $this->documentation->getPage($page);
-
-        return view('examples', compact('page'));
-    }
+    protected $section = 'examples';
 }

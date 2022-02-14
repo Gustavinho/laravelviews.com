@@ -1,0 +1,9 @@
+/**
+ * Thanks to Nuno Maduro and pestphp.com
+ *
+ * @see https://github.com/pestphp/website/blob/master/package.json
+ */
+
+pre {
+  @apply bg-gray-800 !important;
+}

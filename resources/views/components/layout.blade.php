@@ -1,5 +1,5 @@
 <x-base>
-  <div x-data="{ mobileMenu: false }" class="border-b border-gray-200 px-4 py-2 sticky top-0 w-full bg-white z-10">
+  <div x-data="{ mobileMenu: false }" class="border-b border-gray-100 px-4 py-2 fixed top-0 w-full bg-white z-10">
     <!-- Off-canvas menu for mobile, show/hide based on off-canvas menu state. -->
     <div x-show="mobileMenu" class="lg:hidden">
       <div class="fixed inset-0 flex z-40">
@@ -37,10 +37,12 @@
           <div class="flex-1 h-0 pt-5 pb-4 overflow-y-auto">
             <div class="flex-shrink-0 flex items-center px-4 mb-8">
               <a href="/">
-                <span class="text-900 font-bold text-xl px-2">Laravel views</span>
+                <span class="text-gray-900 font-bold text-xl ">Laravel <span class="text-primary-400">views</span></span>
               </a>
             </div>
-            <x-menu />
+            <div class="px-4">
+              <x-menu />
+            </div>
           </div>
         </div>
         <div class="flex-shrink-0 w-14" aria-hidden="true">
@@ -49,17 +51,17 @@
       </div>
     </div>
     <div class="flex items-center justify-between mx-auto max-w-7xl">
-      <a href="/">
-        <span class="text-900 font-bold text-2xl px-2">Laravel views</span>
+      <a href="/" class="flex-1">
+        <span class="text-gray-900 font-bold text-2xl">Laravel <span class="text-primary-400">views</span></span>
       </a>
-      <div class="flex items-center">
-        <a href="https://twitter.com/gustavinho88" class="flex items-center justify-center rounded-full p-1 h-12 w-12">
+      <div class="flex items-center space-x-4 h-12">
+        <a href="https://twitter.com/gustavinho88" class="flex items-center justify-center rounded-full p-1">
           <span class="sr-only">Twitter</span>
-          <i data-feather="twitter" class="h-5 w-5 fill-current text-gray-400 hover:text-blue-500 focus:outline-none focus:bg-blue-500 focus:text-white transition duration-150 ease-in-out "></i>
+          <i data-feather="twitter" class="h-5 w-5 fill-current text-gray-700 hover:text-blue-500 focus:outline-none focus:bg-blue-500 focus:text-white transition duration-150 ease-in-out "></i>
         </a>
-        <a href="https://github.com/Gustavinho/laravel-views" class="flex items-center justify-center rounded-full p-1 h-12 w-12">
+        <a href="https://github.com/Gustavinho/laravel-views" class="flex items-center justify-center rounded-full p-1">
           <span class="sr-only">Github</span>
-          <x-fab-github class="h-6 w-6 fill-current text-gray-400 hover:text-gray-900 focus:outline-none focus:bg-gray-900 focus:text-white transition duration-150 ease-in-out "/>
+          <x-fab-github class="h-6 w-6 fill-current text-gray-700 hover:text-gray-900 focus:outline-none focus:bg-gray-900 focus:text-white transition duration-150 ease-in-out "/>
         </a>
         <button @click="mobileMenu = true" type="button" class="lg:hidden -mr-3 h-12 w-12 inline-flex items-center justify-center rounded-md text-gray-500 hover:text-gray-900">
           <span class="sr-only">Open sidebar</span>
@@ -69,7 +71,7 @@
       </div>
     </div>
   </div>
-  <div>
+  <div class="w-full px-4 bg-gray-50 pt-16">
     {{ $slot }}
   </div>
 </x-base>
