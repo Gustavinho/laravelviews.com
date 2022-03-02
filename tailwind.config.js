@@ -7,12 +7,16 @@ module.exports = {
     "./vendor/laravel-views/**/*.php",
     "./vendor/livewire/**/*.php",
   ],
+  jit: false,
   theme: {
     extend: {
       colors: {
         gray: colors.slate,
-        primary: colors.cyan,
-      }
+        primary: colors.sky,
+      },
+      maxWidth: {
+        '8xl': '90rem',
+      },
     }
   },
   variants: {},

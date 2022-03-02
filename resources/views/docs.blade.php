@@ -9,9 +9,13 @@
   </x-slot>
   <article class="
     py-8 max-w-none
-    prose prose-code:text-primary-700 prose-code:bg-gray-200 prose-code:font-normal prose-code:px-1 prose-code:py-1 prose-code:rounded prose-a:text-primary-700 prose-a:font-normal
+    prose
+    prose-code:bg-gray-200 prose-code:font-semibold prose-code:px-1 prose-code:py-1 prose-code:rounded
+    prose-a:decoration-pink-500
+    prose-img:shadow-lg prose-img:rounded
+    prose-blockquote:border-pink-500 prose-blockquote:font-normal prose-blockquote:bg-gray-100 prose-blockquote:text-gray-700
   ">
-    {{-- <span class="text-primary-500 text-base font-medium">Getting started</span> --}}
+    {{-- <span class="text-primary-500 text-base font-medium">Features</span> --}}
     <x-markdown
       anchors
       flavor="github"

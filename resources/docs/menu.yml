@@ -10,13 +10,31 @@
 - title: Views
   submenu:
     - title: Table view
-      route: /examples/table-view
+      route: /table-view
     - title: Grid view
-      route: /examples/grid-view
+      route: /grid-view
     - title: List view
-      route: /examples/list-view
+      route: /list-view
     - title: Detail view
-      route: /examples/detail-view
+      route: /detail-view
+
+- title: Features
+  submenu:
+    - title: Search
+      route: /search
+    - title: Pagination
+      route: /pagination
+    - title: Sort
+      route: /sort
+    - title: Filters
+      route: /filters
+    - title: Actions
+      route: /actions
+    - title: Inline editing
+      route: /inline-editing
+    - title: UI components
+      route: /ui-components
+
 
 - title: Examples
   submenu:

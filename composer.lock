@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "12dc428c74a075ab8a970100749176c7",
+    "content-hash": "eb1b9da52127c2dd01be90ceb87f1c39",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1168,29 +1168,26 @@
         },
         {
             "name": "laravel-views/laravel-views",
-            "version": "v2.4.0",
+            "version": "dev-bug/small-bug-fixes",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Gustavinho/laravel-views.git",
-                "reference": "299412c0ece5d08d0a11012d02a2c9fc04ffaaba"
+                "reference": "8e04ea86e21cff41e9e26f64028476ff805771c4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Gustavinho/laravel-views/zipball/299412c0ece5d08d0a11012d02a2c9fc04ffaaba",
-                "reference": "299412c0ece5d08d0a11012d02a2c9fc04ffaaba",
+                "url": "https://api.github.com/repos/Gustavinho/laravel-views/zipball/8e04ea86e21cff41e9e26f64028476ff805771c4",
+                "reference": "8e04ea86e21cff41e9e26f64028476ff805771c4",
                 "shasum": ""
             },
             "require": {
                 "livewire/livewire": "2.*"
             },
             "require-dev": {
-                "brianium/paratest": "^6.3",
                 "laravel/legacy-factories": "^1.1",
-                "nunomaduro/collision": "^5.3",
                 "nunomaduro/larastan": "^0.7.6",
-                "orchestra/testbench": "4.*|5.*|6.*",
-                "phpunit/phpunit": "7.0.*|8.5.*|9.5.*",
-                "spatie/laravel-ray": "^1.12"
+                "orchestra/testbench": "^7.0",
+                "phpunit/phpunit": "9.5.*"
             },
             "type": "library",
             "extra": {
@@ -1224,9 +1221,9 @@
             "description": "Laravel package to create beautiful common views like tables using only PHP code",
             "support": {
                 "issues": "https://github.com/Gustavinho/laravel-views/issues",
-                "source": "https://github.com/Gustavinho/laravel-views/tree/v2.4.0"
+                "source": "https://github.com/Gustavinho/laravel-views/tree/bug/small-bug-fixes"
             },
-            "time": "2021-09-29T22:39:10+00:00"
+            "time": "2022-03-02T17:13:03+00:00"
         },
         {
             "name": "laravel/framework",
@@ -10216,7 +10213,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "laravel-views/laravel-views": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

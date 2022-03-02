@@ -5,10 +5,10 @@
   <x-sidenav.link href="/" activeRoute="">
     Home
   </x-sidenav.link>
-  <div class="space-y-8 mt-4">
+  <div class="space-y-4 mt-2">
     @foreach ($menu as $item)
       <div>
-        <div class="flex items-center mb-2">
+        <div class="flex items-center">
           <x-sidenav.title>{{ $item->title }}</x-sidenav.title>
           @isset($item->beta)
             <span class="text-base bg-blue-50 px-2.5 py-0.5 rounded-full font-semibold">

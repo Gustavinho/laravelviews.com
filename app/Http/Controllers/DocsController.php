@@ -7,6 +7,6 @@ use Illuminate\Http\Request;
 class DocsController extends PageController
 {
     protected $section = 'docs';
-    protected $defaultPage = 'README';
+    protected $defaultPage = 'home';
     protected $format = 'markdown';
 }

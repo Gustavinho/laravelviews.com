@@ -1,5 +1,5 @@
 <x-base>
-  <div x-data="{ mobileMenu: false }" class="border-b border-gray-100 px-4 py-2 fixed top-0 w-full bg-white z-10">
+  <div x-data="{ mobileMenu: false }" class="border-b border-gray-100 px-2 py-2 fixed top-0 w-full bg-white z-10">
     <!-- Off-canvas menu for mobile, show/hide based on off-canvas menu state. -->
     <div x-show="mobileMenu" class="lg:hidden">
       <div class="fixed inset-0 flex z-40">
@@ -50,7 +50,7 @@
         </div>
       </div>
     </div>
-    <div class="flex items-center justify-between mx-auto max-w-7xl">
+    <div class="flex items-center justify-between mx-auto max-w-8xl px-4 sm:px-6 md:px-8">
       <a href="/" class="flex-1">
         <span class="text-gray-900 font-bold text-2xl">Laravel <span class="text-primary-400">views</span></span>
       </a>
