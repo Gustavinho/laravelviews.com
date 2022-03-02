@@ -50,7 +50,7 @@
         </div>
       </div>
     </div>
-    <div class="flex items-center justify-between mx-auto max-w-8xl px-4 sm:px-6 md:px-8">
+    <div class="flex items-center justify-between mx-auto max-w-8xl px-2 sm:px-6 md:px-8">
       <a href="/" class="flex-1">
         <span class="text-gray-900 font-bold text-2xl">Laravel <span class="text-primary-400">views</span></span>
       </a>

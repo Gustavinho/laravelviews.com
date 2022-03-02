@@ -1,5 +1,5 @@
 <x-layout>
-  <div class="max-w-8xl px-4 sm:px-6 mx-auto">
+  <div class="max-w-8xl px-0 sm:px-6 mx-auto">
     <div class="lg:grid lg:grid-cols-5 lg:gap-12">
       <div class="hidden lg:block relative">
         <div class="py-8 sticky top-16 overflow-auto h-screen">

@@ -13,7 +13,7 @@
     </h1>
     {{ $page->subtitle }}
 
-    <div class="not-prose px-6 pt-6 pb-4 rounded mt-4 bg-white">
+    <div class="not-prose pt-6 pb-4 rounded mt-4 bg-white">
       @isset ($page->model)
         @livewire($page->component, ['model' => 1])
       @else

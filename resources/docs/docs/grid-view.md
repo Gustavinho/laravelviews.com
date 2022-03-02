@@ -68,9 +68,9 @@ public function card($item)
 
 These are the fields by default but you can add more if you want to customize your card.
 
-## Customizing the card
+## Creating a customized card
 
-The grid view has a card component by default with some data, however, you can create your own card component and use as much data as you need in the `card` method, you just need to specify a blade file with your card component and return the data that you need in the `card()` method.
+The grid view has a card component by default with some data, however, you can create your own card component and use as much data as you need in the `card()` method, you just need to set a public property with the name of your custom component and return the data that you need in the `card()` method.
 
 ```php
 public $cardComponent = 'components.my-card';
@@ -84,7 +84,7 @@ public function card($model) {
 }
 ```
 
-All the data returned in the `card` method will be received as a prop in your blade component along with these other default props that you can use based on your needs.
+All the data returned in the `card()` method will be received as a prop in your blade component along with these other default props that you can use based on your needs.
 
 Name|Description|Type|Value
 --|--|--|--|
