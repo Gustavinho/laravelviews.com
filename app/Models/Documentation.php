@@ -7,8 +7,7 @@ use Illuminate\Filesystem\Filesystem;
 class Documentation
 {
     private Filesystem $fs;
-    private $basePath = '';
-    public $format = '';
+    public $basePath = '';
 
     public function __construct(Filesystem $filesystem)
     {
@@ -16,59 +15,18 @@ class Documentation
         $this->basePath = resource_path('docs');
     }
 
-    public function setBasePath($path)
+    public function get($file)
     {
-        $this->basePath = $path;
+        return $this->fs->get($this->path($file));
     }
 
-    public function getPage($page)
+    public function exists($file): bool
     {
-        if ($this->isSingleFile()) {
-            $pages = $this->getPages();
-            return $pages->$page;
-        }
-
-        $page = $this->addExtention($page);
-        return $this->fs->get($this->path($page));
+        return $this->fs->exists($this->path($file));
     }
 
-    public function get($doc)
+    private function path($file)
     {
-        return $this->fs->get($this->path("{$doc}"));
-    }
-
-    public function exists($page): bool
-    {
-        $page = $this->addExtention($page);
-        if ($this->isSingleFile()) {
-            $pages = $this->getPages();
-            return isset($pages->$page);
-        }
-
-        return $this->fs->exists($this->path($page));
-    }
-
-    private function getPages()
-    {
-        return json_decode($this->fs->get($this->path("pages.json")));
-    }
-
-    private function path($subpath)
-    {
-        return $this->basePath . '/' . $subpath;
-    }
-
-    private function isSingleFile()
-    {
-        return $this->fs->exists($this->path('pages.json'));
-    }
-
-    private function addExtention($page)
-    {
-        if ($this->format === 'markdown') {
-            $page = $page . '.md';
-        }
-
-        return $page;
+        return $this->basePath . '/' . $file;
     }
 }
