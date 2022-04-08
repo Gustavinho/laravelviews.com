@@ -31,8 +31,8 @@ class UsersGridView extends GridView
         return [
             'image' => asset('storage/' . $item->profile_picture),
             'title' => $item->name,
-            'subtitle' => ucfirst($item->type),
-            'description' => $item->email
+            'subtitle' => ucfirst($item->email),
+            'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. '
         ];
     }
 }

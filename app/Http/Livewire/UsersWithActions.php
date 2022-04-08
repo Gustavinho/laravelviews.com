@@ -13,7 +13,7 @@ class UsersWithActions extends UsersWithFiltersTableView
         return [
             new ChangeUserAsAdmin,
             new ChangeUserAsWriter,
-            new ToggleUserAction
+            new ToggleUserAction,
         ];
     }
 }

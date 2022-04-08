@@ -22,9 +22,10 @@ class UserDetailView extends DetailView
     public function detail(User $model)
     {
         return [
+            'Avatar' => UI::avatar(asset('storage/' . $model->avatar)),
             'Name' => $model->name,
             'Email' => $model->email,
-            'Active' => $model->active ? UI::icon('check', 'success') : '',
+            'Active' => $model->active ? UI::icon('check', 'success') : UI::icon('slash', 'danger'),
             'Type' => $model->type,
             'Created' => $model->created_at->diffForHumans(),
             'Updated' => $model->updated_at->diffForHumans(),

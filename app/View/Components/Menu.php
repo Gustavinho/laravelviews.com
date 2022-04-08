@@ -4,6 +4,7 @@ namespace App\View\Components;
 
 use App\Models\Documentation;
 use Illuminate\View\Component;
+use Symfony\Component\Yaml\Yaml;
 
 class Menu extends Component
 {
@@ -26,10 +27,10 @@ class Menu extends Component
      */
     public function render()
     {
-        $menu = $this->documentation->get('menu');
+        $menu = Yaml::parse($this->documentation->get('menu.yml'));
 
         return view('components.menu', [
-            'menu' => $menu
+            'menu' => json_decode(json_encode($menu))
         ]);
     }
 }

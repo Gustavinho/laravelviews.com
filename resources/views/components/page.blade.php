@@ -1,27 +1,25 @@
 <x-layout>
-  <div class="w-full max-w-7xl mx-auto">
-    <!-- This example requires Tailwind CSS v2.0+ -->
-    <div class="flex">
-      <!-- Static sidebar for desktop -->
-      <div class="hidden lg:flex lg:flex-shrink-0 h-screen overflow-y-auto top-16">
-        <div class="flex flex-col w-64 h-auto">
-          <!-- Sidebar component, swap this element with another sidebar if you like -->
-          <div class="flex flex-col flex-grow pt-5 pb-4 overflow-y-auto">
-            <div class="mt-4 flex-grow flex flex-col">
-              <x-menu />
-            </div>
-          </div>
+  <div class="max-w-8xl px-0 sm:px-6 mx-auto">
+    <div class="lg:grid lg:grid-cols-5 lg:gap-12">
+      <div class="hidden lg:block relative">
+        <div class="py-8 sticky top-16 overflow-auto h-screen">
+          @isset($menu)
+            {!! $menu !!}
+          @else
+            <x-menu />
+          @endisset
         </div>
       </div>
-
-      <div class="min-w-0 flex-1">
+      <div class="{{ isset($toc) ? 'lg:col-span-3' : 'lg:col-span-4' }}">
         <main>
-          <!-- Start main area-->
-          {{ $slot }}
-          <!-- End main area -->
+          {!! $slot !!}
         </main>
       </div>
+      @isset($toc)
+        <div class="sticky top-16 lg:overflow-auto lg:h-screen">
+          {!! $toc !!}
+        </div>
+      @endisset
     </div>
   </div>
-
 </x-layout>

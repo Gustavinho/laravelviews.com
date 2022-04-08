@@ -7,31 +7,26 @@ use Illuminate\Filesystem\Filesystem;
 class Documentation
 {
     private Filesystem $fs;
+    public $basePath = '';
 
     public function __construct(Filesystem $filesystem)
     {
         $this->fs = $filesystem;
+        $this->basePath = resource_path('docs');
     }
 
-    public function getPage($page)
+    public function get($file)
     {
-        $pages = $this->getPages();
-        return $pages->$page;
+        return $this->fs->get($this->path($file));
     }
 
-    public function get($doc)
+    public function exists($file): bool
     {
-        return json_decode($this->fs->get(resource_path("docs/{$doc}.json")));
+        return $this->fs->exists($this->path($file));
     }
 
-    public function exists($page): bool
+    private function path($file)
     {
-        $pages = $this->getPages();
-        return isset($pages->$page);
-    }
-
-    private function getPages()
-    {
-        return json_decode($this->fs->get(resource_path("docs/pages.json")));
+        return $this->basePath . '/' . $file;
     }
 }

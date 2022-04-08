@@ -1,37 +1,30 @@
-@push('meta')
-  <title>{{ $page->title ? $page->title . ' - LaravelViews' : config('app.name') }}</title>
-  <x-social-meta
-    title="{{ $page->title }}"
-    description="{{ $page->subtitle }}"
-  />
-@endpush
-
 <x-page>
-  <div class="py-6 px-4 sm:px-6 lg:pl-8 lg:pr-0 text-gray-600">
-    <h1 class="text-2xl lg:text-5xl font-extrabold text-gray-900">
-      {{ $page->title }}
-    </h1>
-    <p class="mt-2 text-base lg:text-xl">{{ $page->subtitle }}</p>
-
-    <div class="mt-8">
-      @isset ($page->model)
-        @livewire($page->component, ['model' => 1])
-      @else
-        @livewire($page->component)
-      @endisset
+  <x-slot name='toc'>
+    <div class="toc mt-8">
+      <x-sidenav.title>On this page</x-sidenav.title>
+      <x-toc>
+        {!! $page !!}
+      </x-toc>
     </div>
-
-    <div class="text-sm mt-8 pb-8">
-      <h3 class="text-xl font-bold text-gray-900">Code example</h1>
-      <x-code file="{{ app_path() . '/Http/Livewire/'.(collect(explode('.', $page->component)))->map(fn ($path) => str_replace(['-', '.'], ['', '/'], ucwords($path, '-')))->implode('/').'.php' }}" />
-
-      @isset($page->code)
-        @foreach ($page->code as $code)
-          <h3 class="text-xl font-bold text-gray-900 mt-8">{{ $code->title }}</h1>
-          <x-code :language="$code->language ?? 'php'" file="{{ base_path() . $code->file }}" />
-        @endforeach
-      @endisset
-    </div>
-    </div>
-  </div>
+  </x-slot>
+  <article class="
+    py-8 max-w-none
+    prose
+    prose-code:bg-gray-200 prose-code:font-semibold prose-code:px-1 prose-code:py-1 prose-code:rounded
+    prose-a:decoration-pink-500
+    prose-img:shadow-lg prose-img:rounded
+    prose-blockquote:border-pink-500 prose-blockquote:font-normal prose-blockquote:bg-gray-100 prose-blockquote:text-gray-700
+  ">
+    {{-- <span class="text-primary-500 text-base font-medium">Features</span> --}}
+    <x-markdown
+      anchors
+      flavor="github"
+      :options="[
+        'renderer' => [
+        ]
+      ]"
+    >
+      {!! $page !!}
+    </x-markdown>
+  </article>
 </x-page>

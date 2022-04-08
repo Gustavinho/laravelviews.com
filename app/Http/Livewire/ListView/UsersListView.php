@@ -8,7 +8,7 @@ use LaravelViews\Views\ListView;
 
 class UsersListView extends ListView
 {
-    public $paginate = 15;
+    public $paginate = 10;
 
     /**
      * Sets a initial query with the data to fill the table

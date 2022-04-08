@@ -7,8 +7,7 @@ use Illuminate\Http\Request;
 
 class DocsController extends Controller
 {
-    private const DEFAULT_PAGE = 'table-view';
-    private Documentation $documentation;
+    protected $section = 'docs';
 
     public function __construct(Documentation $documentation)
     {
@@ -18,14 +17,15 @@ class DocsController extends Controller
     public function show($page = null)
     {
         if (!$page) {
-            return redirect()->route('page', self::DEFAULT_PAGE);
+            $page = 'home';
         }
+        $file = "markdown/{$page}.md";
 
-        if (!$this->documentation->exists($page)) {
+        if (!$this->documentation->exists($file)) {
             abort(404);
         }
 
-        $page = $this->documentation->getPage($page);
+        $page = $this->documentation->get($file);
 
         return view('docs', compact('page'));
     }

@@ -1,0 +1,34 @@
+/**
+ * Thanks to Nuno Maduro and pestphp.com
+ *
+ * @see https://github.com/pestphp/website/blob/master/package.json
+ */
+
+pre {
+  @apply bg-gray-800 !important;
+}
+
+pre code {
+  @apply text-sm !important;
+  line-height: 1.75rem !important;
+}
+
+p code::before, p code::after {
+  content: '' !important;
+}
+
+p code {
+  @apply font-normal !important;
+}
+
+pre.language-bash code {
+  @apply text-gray-200 !important;
+}
+
+blockquote p::before, blockquote p::after {
+  content: '' !important;
+}
+
+blockquote p {
+  @apply py-2 !important;
+}

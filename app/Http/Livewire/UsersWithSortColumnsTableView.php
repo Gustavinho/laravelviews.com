@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use DB;
 use LaravelViews\Facades\Header;
 
 class UsersWithSortColumnsTableView extends UsersTableView
