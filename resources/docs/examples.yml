@@ -1,0 +1,57 @@
+table-view:
+  title: Table view examples
+  description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque deleniti dignissimos inventore dolore veniam, sapiente, sed pariatur vel molestias ex velit? Rerum, odio dignissimos minus facilis repudiandae illum iste? Voluptatum?
+  components:
+    - title: Basic
+      file: users-table-view
+    - title: Sort columns
+      file: users-with-sort-columns-table-view
+    - title: Search and filters
+      file: users-with-filters-table-view
+    - title: Actions
+      file: users-with-actions
+    - title: Bulk actions
+      file: users-with-bulk-actions
+    - title: Inline editing
+      file: table-view.users-with-inline-editing
+
+grid-view:
+  title: Grid view examples
+  description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque deleniti dignissimos inventore dolore veniam, sapiente, sed pariatur vel molestias ex velit? Rerum, odio dignissimos minus facilis repudiandae illum iste? Voluptatum?
+  components:
+    - title: Basic
+      file: users-grid-view
+    - title: Search and filters
+      file: users-with-filters-grid-view
+    - title: Actions
+      file: users-with-actions-grid-view
+    - title: Bulk Actions
+      file: grid-view.users-with-bulk-actions-grid-view
+
+list-view:
+  title: List view examples
+  description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque deleniti dignissimos inventore dolore veniam, sapiente, sed pariatur vel molestias ex velit? Rerum, odio dignissimos minus facilis repudiandae illum iste? Voluptatum?
+  components:
+    - title: Basic
+      file: list-view.users-list-view
+    - title: Search and filters
+      file: list-view.users-with-filters-list-view
+    - title: Actions
+      file: list-view.users-with-actions-list-view
+    - title: Bulk Actions
+      file: list-view.users-with-bulk-actions-list-view
+    - title: Custom list item
+      file: list-view.users-with-custom-component-list-view
+
+detail-view:
+  title: Detail view examples
+  description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque deleniti dignissimos inventore dolore veniam, sapiente, sed pariatur vel molestias ex velit? Rerum, odio dignissimos minus facilis repudiandae illum iste? Voluptatum?
+  components:
+    - title: Basic
+      file: detail-view.user-detail-view
+    - title: Actions
+      file: detail-view.user-detail-view-with-actions
+    - title: Custom attributes list
+      file: detail-view.user-detail-view-with-custom-component
+    - title: Multiple components
+      file: detail-view.user-detail-view-with-multiple-components

@@ -16,9 +16,10 @@ class UserDetailViewWithMultipleComponents extends UserDetailViewWithActions
             UI::component('components.metrics', []),
 
             UI::attributes([
+                'Avatar' => UI::avatar(asset('storage/' . $model->avatar)),
                 'Name' => $model->name,
                 'Email' => $model->email,
-                'Active' => $model->active ? UI::icon('check', 'success') : '',
+                'Active' => $model->active ? UI::icon('check', 'success') : UI::icon('slash', 'danger'),
                 'Type' => ucfirst($model->type),
                 'Created' => $model->created_at->diffForHumans(),
                 'Updated' => $model->updated_at->diffForHumans(),

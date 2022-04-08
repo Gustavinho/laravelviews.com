@@ -1,24 +1,13 @@
 # Detail view
 
-[See live example](https://laravelviews.com/detail-view)
+[See live example](/examples/detail-views)
 
-This view creates a dynamic detail view to render a model attributes list with all the data you need, you can also customize the default component to create complex detail views and execute actions over the model is being used.
+This view creates a dynamic detail view to render a model attributes list with all the data you need, it comes with some default components to display the data, you can also customize the default component to create complex detail views and execute actions over the model is being used.
 
-- [Home](../README.md)
-- [Detail view](#detail-view)
-- [Creating a new detail view](#creating-a-new-detail-view)
-- [Defining initial model](#defining-initial-model)
-- [Defining the heading](#defining-the-heading)
-- [Defining the detail data](#defining-the-detail-data)
-- [Customizing the default component](#customizing-the-default-component)
-- [Using more components](#using-more-components)
-- [Actions](#actions)
+![](/img/docs/detail.png)
 
-## Detail view example
 
-![](./detail.png)
-
-## Creating a new detail view
+## Create a new detail view
 
 ```bash
 php artisan make:view detail ExampleDetailView
@@ -26,35 +15,9 @@ php artisan make:view detail ExampleDetailView
 
 With this artisan command an `ExampleDetailView.php` file will be created inside the `app/Http/Livewire` directory, with this class you can customize the behavior of the detail view.
 
-```php
-<?php
-
-namespace App\Http\Livewire;
-
-use LaravelViews\Views\DetailView;
-
-class ExampleDetailView extends DetailView
-{
-    public $title = "Title";
-    public $subtitle = "Subtitle or description";
-
-    /**
-     * @param $model Model instance
-     * @return Array Array with all the detail data or the components
-     */
-    public function detail($model)
-    {
-        return [
-            'Name' => '',
-            'Email' => '',
-        ];
-    }
-}
-```
-
 ## Defining initial model
 
-The detail view uses a model instance as a data source, you have to set the model when you are rendering the component.
+The DetailView class needs a model instance as a data source, you have to set the model when you are rendering the component.
 
 ```html
 <livewire:example-detail-view :model="$myModelInstance" />
@@ -91,7 +54,7 @@ public function heading($model)
 }
 ```
 
-## Defining the detail data
+## Defining the data
 
 The detail view will render an attributes list and will pass dynamically all the data defined in the `detail` method.
 You have to define a public function returning an array with the data that will be sent to the attributes list.
@@ -114,7 +77,7 @@ Using this data array you can create simple detail views without any HTML code.
 
 ## Customizing the default component
 
-If you dont want to use the default attributes list, you can create your own component and defining it in the `$detailComponent` property on your detail view class, all the data returned in the `detail` method will be passed as an attribute to your component.
+If you dont want to use the default attributes list, you can create your own component and define it in the `$detailComponent` property on your detail view class, all the data returned in the `detail` method will be passed as an attribute to your component.
 
 ```php
 protected $detailComponent = 'components.my-attributes-list-component';
@@ -130,7 +93,7 @@ public function detail($model)
 ```
 
 ```html
-<!-- resources/views/components/my-attributes-list-component -->
+<!-- resources/views/components/my-attributes-list-component.blade.php -->
 @props['name', 'email']
 <ul>
   <li>Name: {{ $name }}<li/>
@@ -139,7 +102,7 @@ public function detail($model)
 ```
 
 ## Using more components
-Some detail views can be complexer than a single attributes list, this detail view can render any other type of custom component as it is needed using the `UI` facade instead of a single data array.
+Some detail views can be more complex than a single attributes list, this detail view can render any other type of custom component as it is needed using the `UI` facade instead of a single data array.
 
 ```php
 UI::component('components.my-custom-component', ['attribute' => 'value' ])
@@ -192,4 +155,4 @@ public function actions()
 }
 ```
 
-See the [full actions documentation](./table-view#actions)
+See the [full actions documentation](/actions)

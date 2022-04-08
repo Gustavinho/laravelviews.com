@@ -24,8 +24,6 @@
       route: /search
     - title: Pagination
       route: /pagination
-    - title: Sort
-      route: /sort
     - title: Filters
       route: /filters
     - title: Actions

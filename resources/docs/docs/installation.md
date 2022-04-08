@@ -55,7 +55,7 @@ If you dont need to include `Tailwindcss`, `Livewire` or `Alpine` assets you can
 
 This is recomended for a production environment where you surely have a compile assets pipeline, like Laravel Mix, or you want to include the assets from a CDN on your own.
 
-## Purge Tailwindcss styles
+#### Purge Tailwindcss styles
 If you're using your own Tailwindcss setup you must consider `laravel-views` in your `purge` configuration, for that just add this path to the `purge` array on the `tailwind.config.js`file.
 
 ```php

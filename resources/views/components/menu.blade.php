@@ -5,6 +5,10 @@
   <x-sidenav.link href="/" activeRoute="">
     Home
   </x-sidenav.link>
+  <x-sidenav.link href="/examples/table-view" activeRoute="">
+    Live examples
+  </x-sidenav.link>
+
   <div class="space-y-4 mt-2">
     @foreach ($menu as $item)
       <div>
