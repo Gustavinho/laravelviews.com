@@ -1,6 +1,6 @@
 # Laravel views
 
-[See live example](https://laravelviews.com)
+[See live examples](https://laravelviews.com/examples/table-view)
 
 Laravel package to create beautiful common views like data tables for the TALL stack.
 
