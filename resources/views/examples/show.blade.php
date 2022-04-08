@@ -10,7 +10,7 @@
   <div class="prose mt-8 max-w-none">
     <h5 class="text-primary-500 font-semibold">Examples</h5>
     <h1>{{ $example->title }}</h1>
-    <p>{{ $example->description }}</p>
+    {{-- <p>{{ $example->description }}</p> --}}
 
     <div class="not-prose">
       <div class="mt-8">
