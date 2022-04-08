@@ -1,9 +1,18 @@
+@push('meta')
+  <title>{{ $title ? 'Laravel Views - ' . $title : config('app.name') }}</title>
+  <x-social-meta
+    title="{{ $title }}"
+    description="Laravel package to create beautiful common views like data tables using the TALL stack."
+    image="{{ asset('/img/docs/table.png') }}"
+  />
+@endpush
+
 <x-page>
   <x-slot name='toc'>
     <div class="toc mt-8">
       <x-sidenav.title>On this page</x-sidenav.title>
       <x-toc>
-        {!! $page !!}
+        {!! $content !!}
       </x-toc>
     </div>
   </x-slot>
@@ -24,7 +33,7 @@
         ]
       ]"
     >
-      {!! $page !!}
+      {!! $content !!}
     </x-markdown>
   </article>
 </x-page>
