@@ -28,6 +28,6 @@ class ChangeUserAsAdmin extends Action
     public function handle($model, View $view)
     {
         $model->update(['type' => 'admin']);
-        $this->error();
+        $this->error('This is an example error message');
     }
 }
