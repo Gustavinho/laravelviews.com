@@ -36,7 +36,9 @@ class UsersWithInlineEditing extends UsersWithBulkActions
      */
     public function update(User $user, $data)
     {
-        $user->update($data);
+        $user->update(collect($data)->map(function ($value) {
+            return strip_tags($value);
+        })->toArray());
         $this->success();
     }
 }

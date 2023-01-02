@@ -15,6 +15,6 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         User::truncate();
-        User::factory(30)->create();
+        User::factory(300)->create();
     }
 }
